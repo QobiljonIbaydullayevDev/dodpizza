@@ -1,0 +1,186 @@
+.modalBg {
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.55;
+	width: 100vw;
+	height: 150vh;
+	z-index: 10;
+}
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0.96);
+	z-index: -1000;
+	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	box-shadow: #00000033 0 30px 60px;
+	background-color: #fff;
+	border-radius: 20px;
+	transition: transform 150ms ease 0s, opacity 150ms ease 0s;
+	&Active {
+		z-index: 1000;
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.modal input {
+	outline: none;
+}
+
+.modalActive ~ .modalBg {
+	visibility: visible;
+}
+
+.modalSmall {
+	width: 409px;
+	height: 399px;
+	padding: 32px;
+}
+
+.modalClose {
+	position: absolute;
+	top: 14px;
+	right: -38px;
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+	border: none;
+	font: inherit;
+	color: #fff;
+	background-color: transparent;
+	transition: transform 0.1s ease-in-out;
+}
+.modalClose:hover {
+	transform: scale(1.11);
+}
+
+.modal {
+	&Title {
+		margin-bottom: 8px;
+		font-size: 36px;
+		line-height: 36px;
+		font-weight: 500;
+	}
+
+	&Description {
+		margin-bottom: 24px;
+		line-height: 20px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #5c6370;
+	}
+
+	&Form {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		&Container {
+			// display: flex;
+			label {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+	}
+}
+
+.labelText {
+	margin-bottom: 8px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #5c6370;
+}
+
+.submitButton {
+	width: 100%;
+	height: 48px;
+	padding: 12px 24px;
+	font-size: 16px;
+	line-height: 24px;
+	font-family: inherit;
+	border-radius: 9999px;
+	border: 0;
+	background-color: #ff6900;
+	color: #fff;
+	transition: background-color 200ms ease-out, color 200ms ease-out;
+
+	&:hover {
+		background-color: #e86100;
+		cursor: pointer;
+	}
+
+	&:active {
+		background-color: #ff6900;
+		color: #ffa566;
+	}
+
+	&:disabled {
+		color: rgb(171, 173, 186);
+		background-color: #e2e2e9;
+		cursor: not-allowed;
+	}
+}
+
+.inputLabels {
+	display: flex;
+	gap: 70px;
+}
+
+.shortDescription {
+	margin-bottom: 0;
+}
+
+.formattedTel {
+	input {
+		width: 130px;
+		margin-right: 8px;
+		border: 0;
+		pointer-events: none;
+		font-family: 'Dodo';
+		font-weight: 600;
+		font-size: 16px;
+	}
+}
+
+.ghostButton {
+	color: #ff6900;
+	cursor: pointer;
+	&:hover {
+		color: #d15700;
+	}
+}
+
+.otpCodeInputs {
+	display: flex;
+	justify-content: center;
+	margin: 48px 0 95px;
+	.OTPInput {
+		width: 52px;
+		height: 60px;
+		background-color: rgb(255, 255, 255);
+		outline: none;
+		border: 1px solid rgb(211, 213, 222);
+		border-radius: 12px;
+		color: rgb(0, 0, 0);
+		font-size: 36px;
+		line-height: 36px;
+		text-align: center;
+		font-family: 'Dodo';
+		font-weight: 600;
+		padding: 0px;
+		margin-right: 12px;
+		writing-mode: horizontal-tb;
+		caret-color: transparent;
+		&:focus {
+			border-color: rgb(255, 105, 0);
+		}
+	}
+}
